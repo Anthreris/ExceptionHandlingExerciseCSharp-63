@@ -29,6 +29,21 @@ namespace ExceptionHandlingExercise
             var str = "";
 
             // 4) Make a foreach loop to iterate through your character array            
+            foreach (var item in arr)
+            {
+                try
+                {
+                    str = item.ToString();
+                    var number = int.Parse(str);
+                    numbers.Add(number);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Unable to Parse '{item}'");
+                    Console.WriteLine(e.Message);
+                }
+            }
+            
             // 5) Create a try-catch inide of your foreach loop
             // 6) Inside the try block: 
             // 7) Set your string variable to each array element in your char[] to .ToString()
